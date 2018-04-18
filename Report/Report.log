@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.18)  18 APR 2018 22:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.18)  18 APR 2018 22:44
 entering extended mode
 **./Report.tex
 (Report.tex
@@ -1084,13 +1084,13 @@ LaTeX Warning: Reference `tab:spec' on page 5 undefined on input line 147.
 <controller.png, id=50, 411.03563pt x 224.33812pt>
 File: controller.png Graphic file (type png)
 <use controller.png>
-Package pdftex.def Info: controller.png  used on input line 239.
+Package pdftex.def Info: controller.png  used on input line 242.
 (pdftex.def)             Requested size: 426.79134pt x 232.93643pt.
  [7] [8 <./controller.png>]
 <bode.jpeg, id=59, 1404.24625pt x 1380.15625pt>
 File: bode.jpeg Graphic file (type jpg)
 <use bode.jpeg>
-Package pdftex.def Info: bode.jpeg  used on input line 272.
+Package pdftex.def Info: bode.jpeg  used on input line 275.
 (pdftex.def)             Requested size: 284.52756pt x 279.64859pt.
  [9 <./bode.jpeg>] (Report.aux)
 
@@ -1116,7 +1116,7 @@ Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 8.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmti12.pfb>
-Output written on Report.pdf (10 pages, 374946 bytes).
+Output written on Report.pdf (10 pages, 375835 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
