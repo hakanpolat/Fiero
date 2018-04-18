@@ -19,7 +19,7 @@
 
 \sectionfont{\color{melisa}}
 \subsectionfont{\color{hakan}}
-\subsubsectionfont{\color{esra}}
+\subsubsectionfont{\color{ugur}}
 
 \setstretch{1.5}
 
@@ -85,7 +85,64 @@ As Fiero Converters, we manufacture 230 V AC to 9 V DC, 10 W Flyback  Converters
 
 
 
-\section{Design Procedure}
+
+
+\section{Isolated Converter Simulation}
+
+The design is made using \cite{}. There is snubber in order to reduce the current and voltage stress the MOSFET endures during operation. The resultant effect of the snubber is clearly observed in the simulations as well. The simulations were done synchronously with the implementation and hence the design parameters for the switch, diode and the transformer are taken from the implemented products.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15 cm]{Design}
+    \caption{Flyback Design}
+    \label{fig:design}
+\end{figure}
+
+\subsection{Part I. Steady State Operation of the Converter}
+
+The figures \ref{fig:loadvoltage}, \ref{fig:loadcurrent}, \ref{fig:rectifier}, \ref{fig:display} show the simulation waveforms and the resultant voltage, current and power outputs for the calculated values of maximum duty cycle, turns ratio, reasonable capacitor values and resistance for the ideal case.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15 cm]{LoadVoltage}
+    \caption{Load Steady State Voltage}
+    \label{fig:loadvoltage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15 cm]{LoadCurrent}
+    \caption{Load Steady State Current}
+    \label{fig:loadcurrent}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15 cm]{RectifieVoltage}
+    \caption{Rectifier Output Voltage at Steady State}
+    \label{fig:rectifier}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8 cm]{VIvalues}
+    \caption{All voltage current display values}
+    \label{fig:display}
+\end{figure}
+
+Moreover, we have also checked that the switch voltage and current remains in the tolarable range. As expected, the voltage across the switch will be twice the input voltage when it turns off. This can be seen in figure\ref{fig:switch}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15 cm]{switch_stress_snubbereffect}
+    \caption{Current and voltage of the MOSFET during operation}
+    \label{fig:switch}
+\end{figure}
+
+\subsection{Transformer Design}
+
 Throughout the design procedure we followed the steps of Wurth Transformers.\\
 We started our design by defining our specs for the flyback converter which is present in \ref{tab:spec}.
 \begin{table}[H]
@@ -158,66 +215,24 @@ an interger value we selected,
 \end{equation*}
 After selecting the turns ratios we should select proper commercial cables. By checking the rated currents, fill factor and our core area we choose the cable types AWG28 and AWG21 for primary and secondary side respectively.
 
+\subsection{Minimum Load Current Within CCM}
+To satisfy the continuous conduction mode condition, basically $L_{m}$ current discharge completely. To find minimum load current satisfying this condition, $\Delta I_{lm}$ value should be determined first. Afterwards, half of the $\Delta I_{lm}$ should be equal to the minimum load current reflected to the primary side so that $L_{m}$ current never discharges completely.
 
+\begin{equation*}
+    \Delta I_{lm}= \dfrac{V_{in}DT_{s}}{L_{m}}= \dfrac{325V* 0.4*(1/62500)}{72mH} = 0.02888 A
+\end{equation*}
 
-\section{Isolated Converter Simulation}
+Half of the $\Delta I_{lm}$ value is the minimum input current for the CCM. In order to find minimum output current, input current should be reflected. 
+\begin{equation*}
+    I_{out,min}= \dfrac{\Delta I_{lm}}{2}
+\end{equation*}
 
-The design is made using \cite{}. There is snubber in order to reduce the current and voltage stress the MOSFET endures during operation. The resultant effect of the snubber is clearly observed in the simulations as well. The simulations were done synchronously with the implementation and hence the design parameters for the switch, diode and the transformer are taken from the implemented products.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=15 cm]{Design}
-    \caption{Flyback Design}
-    \label{fig:design}
-\end{figure}
-
-\subsection{Part I. Steady State Operation of the Converter}
-
-The figures \ref{fig:loadvoltage}, \ref{fig:loadcurrent}, \ref{fig:rectifier}, \ref{fig:display} show the simulation waveforms and the resultant voltage, current and power outputs for the calculated values of maximum duty cycle, turns ratio, reasonable capacitor values and resistance for the ideal case.
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=15 cm]{LoadVoltage}
-    \caption{Load Steady State Voltage}
-    \label{fig:loadvoltage}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=15 cm]{LoadCurrent}
-    \caption{Load Steady State Current}
-    \label{fig:loadcurrent}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=15 cm]{RectifieVoltage}
-    \caption{Rectifier Output Voltage at Steady State}
-    \label{fig:rectifier}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=8 cm]{VIvalues}
-    \caption{All voltage current display values}
-    \label{fig:display}
-\end{figure}
-
-Moreover, we have also checked that the switch voltage and current remains in the tolarable range. As expected, the voltage across the switch will be twice the input voltage when it turns off. This can be seen in figure\ref{fig:switch}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=15 cm]{switch_stress_snubbereffect}
-    \caption{Current and voltage of the MOSFET during operation}
-    \label{fig:switch}
-\end{figure}
-
-\subsection{Transformer Design}
-
-For flyback topology design, there are many different considerations like loss, area, saturation etc. We started the topology knowing that the duty cycle can not exceed 0.5. Following the steps in \cite{cookcook}, we started by putting a safety margin to the duty cycle and selecting it to be 0.4. Once we have decided on this, using the flyback input output relation $N_{sec}/N{prim}\cdot D/(1-D) \cdot V_{in}=V_{out}$ ,since flyback is a buck boost topology, we found the turns ratio to be 19. Following this, we need the primary and secondary rms and average currents in order to decide on the core inductance and the exact turns ratio. We know that ideally we need around 1.2 A in secondary and .....
-
+\begin{equation*}
+    I_{out,min}= \dfrac{N_{1}}{N_{2}}*I_{out,min}= 19*0.01444 = 0.27436 A
+\end{equation*}
+       
+\subsection{Efficiency of the Converter}
+       
        
 \section{Controller Design}
 
