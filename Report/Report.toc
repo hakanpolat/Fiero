@@ -1,6 +1,5 @@
 \babel@toc {english}{}
 \contentsline {section}{\numberline {1}Introduction}{2}
-<<<<<<< HEAD
 \contentsline {section}{\numberline {2}Design Procedure}{2}
 \contentsline {section}{\numberline {3}Isolated Converter Simulation}{4}
 \contentsline {subsection}{\numberline {3.1}Part I. Steady State Operation of the Converter}{4}
@@ -8,11 +7,3 @@
 \contentsline {section}{\numberline {4}Controller Design}{7}
 \contentsline {subsection}{\numberline {4.1}Part 1. Controller Transfer Function}{8}
 \contentsline {subsection}{\numberline {4.2}Part 2. Controller Computer Simulation}{9}
-=======
-\contentsline {section}{\numberline {2}Isolated Converter Simulation}{2}
-\contentsline {subsection}{\numberline {2.1}Part I. Steady State Operation of the Converter}{2}
-\contentsline {subsection}{\numberline {2.2}Transformer Design}{5}
-\contentsline {section}{\numberline {3}Controller Design}{5}
-\contentsline {subsection}{\numberline {3.1}Part 1. Controller Transfer Function}{6}
-\contentsline {subsection}{\numberline {3.2}Part 2. Controller Computer Simulation}{7}
->>>>>>> 1ddda10c1aba119f5363a7c587f2c446c3b65206

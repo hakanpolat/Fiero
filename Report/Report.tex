@@ -85,7 +85,78 @@ As Fiero Converters, we manufacture 230 V AC to 9 V DC, 10 W Flyback  Converters
 
 
 
+\section{Design Procedure}
+Throughout the design procedure we followed the steps of Wurth Transformers.\\
+We started our design by defining our specs for the flyback converter which is present in \ref{tab:spec}.
+\begin{table}[H]
+\centering
 
+\label{tab:spec}
+\begin{tabular}{|l|l|}
+\hline
+$V_{in} $ & $220 V_{ac}$ \\ \hline
+$V_{out}$ & 9 V           \\ \hline
+$P_{out}$ & 9 W           \\ \hline
+\end{tabular}
+\caption{Specs of our flyback converter design}
+\end{table}
+
+
+The flyback converter transfers the power stored in the core in off state and the $\Delta I_{lm}$ stays the same since its formula depends on constant values.
+\begin{equation*}
+    \Delta I_{lm}= \dfrac{V_{in}DT_{s}}{L_{m}}
+\end{equation*}
+Therefore it is important to let the core have enough discharge time to avoid saturation. Taking these limitations into concideration we decided $D_{max}=0.4$ for the design of the converter.\\
+Next step the determination of $V_{in}$ and $V_{out}$. We plan on rectifying the AC voltage to DC using a full bridge diode rectifier and generate a DC voltage using a DC-link capacitor. According to our calculations the $V_{in,dc}$ varies between 300-325 V. As for the $V_{out}$ we will design it for a $V_{out}$ of 10.5 V which also takes the voltage drop in the diode.\\
+Knowing $D_{max}$,$V_{in}$ and $V_{out}$ we can calculate the approximate turns ratio using the formula below.
+\begin{equation*}
+    \dfrac{N1}{N2}=\dfrac{D_{max}}{1-D_{max}}\dfrac{V_{in,min}}{V_{out}}= 19 
+\end{equation*}
+By recalculating the $D_{max}$ we obtain;
+
+\begin{equation*}
+    D_{max}=\dfrac{19}{12+\dfrac{300}{10.5}}=0.399 
+\end{equation*}
+The next step is to choose the voltage and current rating of the switch. We are using a mosfet since it has a faster switching response and the current on the primary side during on time is low.\\
+During off state the $V_{out}$ induces voltage on the primary winding which is $V_{primary}=-V_{d}$.
+Therefore the blocking voltage is $V_{switch}=2*V_{in,max}$.
+Also a safety margin for the switching peak voltages results in
+
+\begin{equation*}
+    V_{sw,max}=2 V_{in,max}+ V_{in,max}=3V_{in,max}=844 V
+\end{equation*}
+The current rating can be calculated from
+
+\begin{equation*}
+    I_{rated,sw}=\dfrac{P_{out}}{V_{out}}*\dfrac{N2}{N1}=0.05A
+\end{equation*}
+Also in this case a safety margin will be added.\\
+The next step is the calculation of the $L_{lm}$ which results in a \%25 ripple in $I_{out}$(Our starting assumption is \%25) 
+. Again by using the $\Delta I_{lm}$ equation (this time for off state),
+
+\begin{equation*}
+    L_{sekondary}=\dfrac{V_{out}(1-D_{max})}{0.25I_{avg,seconcary}frequency}=\dfrac{10.5(1-0.4)}{0.25*2*62500}=201.6 \mu H
+\end{equation*}
+If we reflect the found $L_{secondary}$ to primary we get
+$L_{primary}=72mH$. \\
+After calculating the core inductance we should now consider the $A_{e}$ and $B_{sat}$ of our core. Since the equation
+\begin{equation*}
+   N_{primary}>\dfrac{L_{primary}I_{primary,max}}{B_{sat}A_{e}}
+\end{equation*}
+must hold.\\
+Our core has an $A_{e}=125mm^2$ and $B_{sat}=0.3T$ by inserting the values to the equation we obtain,
+\begin{equation*}
+   N_{primary}> 224.64
+\end{equation*}
+For calculation simplicity and to make the $N_{primary}$
+an interger value we selected,
+\begin{equation*}
+   N_{primary}= 228
+\end{equation*}
+\begin{equation*}
+   N_{secondary}= 12
+\end{equation*}
+After selecting the turns ratios we should select proper commercial cables. By checking the rated currents, fill factor and our core area we choose the cable types AWG28 and AWG21 for primary and secondary side respectively.
 
 
 
