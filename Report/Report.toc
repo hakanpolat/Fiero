@@ -6,5 +6,5 @@
 \contentsline {subsection}{\numberline {2.3}Minimum Load Current Within CCM}{7}
 \contentsline {subsection}{\numberline {2.4}Efficiency of the Converter}{7}
 \contentsline {section}{\numberline {3}Controller Design}{8}
-\contentsline {subsection}{\numberline {3.1}Part 1. Controller Transfer Function}{8}
-\contentsline {subsection}{\numberline {3.2}Part 2. Controller Computer Simulation}{9}
+\contentsline {subsection}{\numberline {3.1}Part 1. Controller Transfer Function}{9}
+\contentsline {subsection}{\numberline {3.2}Part 2. Controller Computer Simulation}{10}
