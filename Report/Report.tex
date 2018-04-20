@@ -241,21 +241,53 @@ In this section, efficiency of the converter will be calculated for different lo
 \end{equation*}      
 For full load condition :
        
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=15 cm]{effic100}
-    \caption{Input and Output values at full loading}
-    \label{fig:100}
-\end{figure}
-
 \begin{equation*}
-    \eta_{100} = \dfrac{V_{out}*I_{out}}{V_{in}*I_{in}}=\dfrac{9.01*1.112}{316.5*0.08664}= \dfrac{10.02}{27.42}= 36.5 \%
+    \eta_{100} = \dfrac{V_{out}*I_{out}}{V_{in}*I_{in}}=\dfrac{9.01*1.112}{316.5*0.04564}= \dfrac{9.4}{12}= 75 \%
+\end{equation*} 
+
+For \%75 load condition :
+       
+\begin{equation*}
+    \eta_{75} = \dfrac{V_{out}*I_{out}}{V_{in}*I_{in}}=\dfrac{9.01*0.85}{321*0.037}= \dfrac{7.87}{11.8}= 66 \%
+\end{equation*} 
+
+For \%50 load condition :
+       
+\begin{equation*}
+    \eta_{50} = \dfrac{V_{out}*I_{out}}{V_{in}*I_{in}}=\dfrac{9.01*0.74}{321*0.032}= \dfrac{6.7}{10.2}= 64 \%
+\end{equation*} 
+
+For \%25 load condition :
+       
+\begin{equation*}
+    \eta_{25} = \dfrac{V_{out}*I_{out}}{V_{in}*I_{in}}=\dfrac{9.01*0.64}{321*0.029}= \dfrac{5.98}{9.3}= 64 \%
 \end{equation*} 
 
 
-       
+\subsection{Preliminary Component Selection}
+
+In this section, selected components to be used in the implementation will be given. 
+
+For the mosfet ;
+
+\begin{equation*}
+    V_{sw,max}=2 V_{in,max}+ V_{in,max}=3V_{in,max}=844 V
+\end{equation*}
+The current rating can be calculated from
+
+\begin{equation*}
+    I_{rated,sw}=\dfrac{P_{out}}{V_{out}}*\dfrac{N2}{N1}=0.05A
+\end{equation*}
+According to current and voltage ratings, Toshiba 2SK1119 MOSFET is chosen.It has 1000V drain to source voltage rating and 4A drain current capacity.
+
+Also in the simulation, frequency is chosen to be 62500 Hz. Selected MOSFET is quite capable of working in this frequency.
+
+For the diode located at the secondary side, MBRA320T3G is chosen. Rating of the secondary side current is 1.1A which is lower than 3A current rating of the diode. Also breakdown voltage of the diode is 20V which is quite sufficient for the operation. 
+
+As a result of calculations in the previous parts, 680 $\mu$F capacitor with 1200V voltage rating will be placed to output of diode rectifier. Another 4.7mF capacitor will placed to the output of the converter.  
+
+For the core selection, we have visited Konya Sokak and due to lack of datasheet, we have been informed by the seller. According to him, our core has an $A_{e}=125mm^2$ and $B_{sat}=0.3T$. We made transformer design according to this information. 
+
 \section{Controller Design}
 
 This part contains the desired control design for our flyback converter. The controller is chosen to be type 2 controller with a schematic shown in figure \ref{fig:controller}.
