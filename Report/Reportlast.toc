@@ -1,0 +1,14 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Isolated Converter Simulation}{2}
+\contentsline {subsection}{\numberline {2.1}Part I. Steady State Operation of the Converter}{2}
+\contentsline {subsection}{\numberline {2.2}Transformer Design}{5}
+\contentsline {subsection}{\numberline {2.3}Minimum Load Current Within CCM}{7}
+\contentsline {subsection}{\numberline {2.4}Efficiency of the Converter}{7}
+\contentsline {subsection}{\numberline {2.5}Preliminary Component Selection}{8}
+\contentsline {section}{\numberline {3}Controller Design}{9}
+\contentsline {subsection}{\numberline {3.1}Part 1. Controller Transfer Function}{9}
+\contentsline {subsection}{\numberline {3.2}Controller Computer Simulation -b and c-}{10}
+\contentsline {section}{\numberline {4}Load and input Change Adaptation}{12}
+\contentsline {section}{\numberline {5}Discussion}{14}
+\contentsline {section}{\numberline {6}References}{16}
