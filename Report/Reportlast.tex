@@ -10,7 +10,7 @@
 \usepackage{setspace}
 \usepackage{xcolor}
 \usepackage{sectsty}
-
+\usepackage[tableposition = top]{caption}
 
 
 \definecolor{melisa}{RGB}{180,120,20}
@@ -150,13 +150,12 @@ We started our design by defining our specs for the flyback converter which is p
 
 \label{tab:spec}
 \begin{tabular}{|l|l|}
-\caption{Specs of our flyback converter design}
 \hline
 $V_{in} $ & $220 V_{ac}$ \\ \hline
 $V_{out}$ & 9 V           \\ \hline
 $P_{out}$ & 9 W           \\ \hline
 \end{tabular}
-
+\caption{Specs of our flyback converter design}
 \end{table}
 
 
@@ -331,7 +330,90 @@ Here, we observe that the controller is a compensator function. It is in our con
     \label{fig:bode}
 \end{figure}
 
-\subsection{Part 2. Controller Computer Simulation}
+\subsection{Controller Computer Simulation -b and c-}
+The bode plot for type 2 controller is simulated as seen in figure\ref{fig:controller}
 
+\begin{figure}
+    \centering
+    \includegraphics{controllerd}
+    \caption{Controller designed for the plant}
+    \label{fig:controller}
+\end{figure}
+
+This controller was designed for the flyback converter. Since the transfer function for a flyback isa nonlinear one, first a system identification is applied on the converter. Then, not being sure whether this system is fine, literature is researched and an application noteof texas instruments(http://www.ti.com/lit/an/slua086/slua086.pdf) is found explaining in detail of how to select the necessary parameters.
+
+
+
+The rightmost zero (the one closer to the unstable region) is found from:
+\begin{equation}
+    \omega_{rhz}=\dfrac{N V^2_{in}}{R_{out}L_p(V_{in} +N V_{out}) }
+    \label{1}
+\end{equation}
+
+Using the measured inductance of our core, this yields a zero around $0.5 10^{-4}$ and according to the document, this zero determines the maximum crossover frequency. Taking this value as our crossover frequency, one zero and one pole is selected. $\omega_{z}=0.0001 and \omega_{p}=0.001$. 
+
+Once again the document suggests that for compensation, high gain at low frequencies is needed. Hence,the gain is selected as 10. For very low frequencies, the gain contribution of the controller is 1. 
+
+The closed loop control works fine and the system settles at the very desired point. The results are shown in \ref{fig:controlled}  and \ref{fig:controllerout}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{controlledvoltage}
+    \caption{Controller output voltage}
+    \label{fig:controlled}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{controlledoutput}
+    \caption{Controller output values}
+    \label{fig:controllerout}
+\end{figure}
+
+\section{Load and input Change Adaptation}
+
+The controller behaves very quick and compensated to the load changes as seen in \ref{fig:d1} and \ref{fig:d2}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{d1}
+    \caption{Controller output voltage for load increase}
+    \label{fig:d1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{d2}
+    \caption{Controller output values for load increase}
+    \label{fig:d2}
+\end{figure}
+
+And when the Ac voltage input is decreased by 10 percent from its nominal value, the controller is still able to keep the output at 9 V.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{d3}
+    \caption{Controller output voltage for input decrease 200V AC}
+    \label{fig:d1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{d4}
+    \caption{Controller output values for input decrease 200V AC}
+    \label{fig:d2}
+\end{figure}
+
+\section{Discussion}
+
+This controller performs very quick and the output oscillation is acceptable. At the very beginning it has an overshoot but this overshoot settles quickly. The controller is capable of adjusting to both input and output changes. 
+
+\begin{figure}
+    \centering
+    \includegraphics{controllerreoınse}
+    \caption{Frequency response of the flyback from system identification}
+    \label{fig:fr}
+\end{figure}
+
+Looking at the frequency response \ref{fr} and the crossover frequency we have calculated from the document base equation \ref{1}, we see that the derived and simulated values do fit. And we observe that the controller works nice.
 
 \end{document}

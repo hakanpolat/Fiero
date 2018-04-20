@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=latex 2017.8.25)  20 APR 2018 11:50
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.18)  20 APR 2018 22:13
->>>>>>> 2bb7ad7449039c163940fa82bbab6782f0ee9b86
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=latex 2017.8.25)  20 APR 2018 23:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -830,29 +826,7 @@ Package geometry Warning: Over-specification in `h'-direction.
 Package geometry Warning: Over-specification in `v'-direction.
     `height' (731.23582pt) is ignored.
 
-(./Report.aux
-! Undefined control sequence.
-l.2 \babel@aux
-              {english}{}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 \babel@aux{e
-                nglish}{}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
+(./Report.aux)
 \openout1 = `Report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -905,9 +879,6 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-[1
-
-]
 
 ! LaTeX Error: Cannot determine size of graphic in fiero-logo.png (no BoundingB
 ox).
@@ -922,45 +893,16 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 File: fiero-logo.png Graphic file (type eps)
-<fiero-logo.png> [1] (./Report.toc
-! Undefined control sequence.
-l.1 \babel@toc
-               {english}{}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+<fiero-logo.png> [1
 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...e {section}{\numberline {1}Introduction}{2}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...e {section}{\numberline {1}Introduction}{2}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
+] (./Report.toc)
 \tf@toc=\write4
 \openout4 = `Report.toc'.
 
  [1]
+
+LaTeX Warning: Reference `fig:design' on page 2 undefined on input line 84.
+
 
 ! LaTeX Error: File `Design' not found.
 
@@ -974,6 +916,21 @@ I could not locate the file with any of these extensions:
 .eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `fig:loadvoltage' on page 2 undefined on input line 10
+3.
+
+
+LaTeX Warning: Reference `fig:loadcurrent' on page 2 undefined on input line 10
+3.
+
+
+LaTeX Warning: Reference `fig:rectifier' on page 2 undefined on input line 103.
+
+
+
+LaTeX Warning: Reference `fig:display' on page 2 undefined on input line 103.
 
 
 ! LaTeX Error: File `LoadVoltage' not found.
@@ -999,122 +956,4 @@ Type  H <return>  for immediate help.
 l.116 ...includegraphics[width=15 cm]{LoadCurrent}
                                                   
 I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `RectifieVoltage' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 ...udegraphics[width=15 cm]{RectifieVoltage}
-                                                  
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `VIvalues' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.130     \includegraphics[width=8 cm]{VIvalues}
-                                                
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `switch_stress_snubbereffect' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.139 ...width=15 cm]{switch_stress_snubbereffect}
-                                                  
-I could not locate the file with any of these extensions:
-.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[2]
-
-Package caption Warning: \label without proper reference on input line 151.
-See the caption package documentation for explanation.
-
-
-<<<<<<< HEAD
-LaTeX Warning: Reference `tab:spec' on page 3 undefined on input line 147.
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.153 ...on{Specs of our flyback converter design}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-=======
-LaTeX Warning: Reference `tab:spec' on page 5 undefined on input line 147.
-
-[5 <./switch_stress_snubbereffect.png>] [6] [7] [8]
-<controller.png, id=57, 411.03563pt x 224.33812pt>
-File: controller.png Graphic file (type png)
-<use controller.png>
-Package pdftex.def Info: controller.png  used on input line 295.
-(pdftex.def)             Requested size: 426.79134pt x 232.93643pt.
- [9 <./controller.png>]
-<bode.jpeg, id=62, 1404.24625pt x 1380.15625pt>
-File: bode.jpeg Graphic file (type jpg)
-<use bode.jpeg>
-Package pdftex.def Info: bode.jpeg  used on input line 328.
-(pdftex.def)             Requested size: 284.52756pt x 279.64859pt.
-
-[10 <./bode.jpeg>] (Report.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
-Here is how much of TeX's memory you used:
- 15147 strings out of 493305
- 293384 string characters out of 3130237
- 341003 words of memory out of 3000000
- 18384 multiletter control sequences out of 15000+200000
- 10524 words of font info for 37 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 55i,11n,54p,537b,300s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmbxti10.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Asus/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Asus/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Asus/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
-Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-8.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><C:/Users/Asus/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmti12.pfb>
-Output written on Report.pdf (11 pages, 380374 bytes).
-PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 2bb7ad7449039c163940fa82bbab6782f0ee9b86
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.153 ...on{Specs of our flyback converter design}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted
+.eps,.ps
