@@ -1,5 +1,5 @@
 
-float ref_voltage=1; // Do not forget, Ardinocan read up to 5.2 Vansd will scale the values read upto 5.2 V
+float ref_voltage=0.5; // Do not forget, Ardinocan read up to 5.2 Vansd will scale the values read upto 5.2 V
 float V_ref; //will be up to 1024
 
 int data_read = A5;
@@ -30,8 +30,7 @@ void loop(){
 
    feedback = analogRead(data_read);
 
-    if ((feedback<=V_ref*1.05 )&& (feedback>=V_ref*0.95)&&(D!=0))
-           {
+   
             if (feedback<V_ref){
               D++;
               }
@@ -41,7 +40,7 @@ void loop(){
               }
         
           if (D>=100) D=100;
-          else if (D<=0) D=0;
+          else if (D<0) D=0;
            
            analogWrite(pwm_pin, D);
            
@@ -49,21 +48,8 @@ void loop(){
            Serial.println(D);
         
            delay(100);
-           }
-
-           else if ((feedback<=V_ref*0.95) && (D<=100))
-           {
-            
-              D++;
-              
            
-           analogWrite(pwm_pin, D);
            
-           Serial.print("Duty Cycle = ");
-           Serial.println(D);
-        
-           delay(100);
-           }
 
            
 }
