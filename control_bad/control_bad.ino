@@ -1,5 +1,5 @@
 
-float ref_voltage=0.5; // Do not forget, Ardinocan read up to 5.2 Vansd will scale the values read upto 5.2 V
+float ref_voltage=3.75; // Do not forget, Ardinocan read up to 5.2 Vansd will scale the values read upto 5.2 V
 float V_ref; //will be up to 1024
 
 int data_read = A5;
@@ -14,7 +14,6 @@ void setup() {
   // TCCR2B = TCCR2B & B11111000 | B00000010;    // set timer 2 divisor to     8 for PWM frequency of  3921.16 Hz D9 bacagı için
 TCCR0B = TCCR0B & B11111000 | B00000001;
 
-V_ref= ref_voltage/5.2*1024;// this isthe analog correspondence of reference set voltage above
 
 }
 
@@ -22,11 +21,14 @@ V_ref= ref_voltage/5.2*1024;// this isthe analog correspondence of reference set
 
 void loop(){
 
-  if (Serial.available() > 0) {
-                // read the incoming byte:
-                ref_voltage = Serial.read();
+ // if (Serial.available() > 0) {
+   //             // read the incoming byte:
+     //           ref_voltage = Serial.read();
 
-        }
+       // }
+
+   V_ref= ref_voltage/5.2*1024;// this isthe analog correspondence of reference set voltage above
+
 
    feedback = analogRead(data_read);
 
@@ -45,8 +47,11 @@ void loop(){
            analogWrite(pwm_pin, D);
            
            Serial.print("Duty Cycle = ");
-           Serial.println(D);
-        
+           Serial.println(D/255);
+
+          Serial.print("ref = ");
+           Serial.println(V_ref);
+           
            delay(100);
            
            
